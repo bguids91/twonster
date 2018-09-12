@@ -23,8 +23,7 @@ border-bottom: 2px solid black
   padding: 12px 12px;
 }
 
-.new-tweet .tweet-button {
-float: left, bottom;
+.new-tweet .button {
 }
 
 .new-tweet .counter {
