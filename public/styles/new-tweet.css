@@ -11,8 +11,9 @@ html {
 }
 
 .new-tweet h2 {
+color: gray;
 margin-top: 0;
-border-bottom: 2px solid black
+border-bottom: 2px solid gray;
 }
 
 .new-tweet textarea {
