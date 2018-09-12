@@ -52,6 +52,7 @@ const data = [{
   }
 ];
 
+
 function renderTweets(tweets) {
   for(users in tweets) {
       let tweet = tweets[users];
@@ -60,26 +61,21 @@ function renderTweets(tweets) {
   }
 }
 
-
 function createTweetElement(tweet) {
   let $tweet = $('<article>').addClass('tweet');
   let $header = $('<header>').addClass('tweet-header');
-  let $userimg = $('<img>').addClass('userphoto');
-  let $username = $('<h2>').addClass('username');
-  let $userhandle = $('<h4>').addClass('userhandle');
-  let $tweetcontent = $('<p>');
-  let $tweetfooter = $('<footer>').addClass('tweet-footer');
+  let $userimg = $('<img>').addClass('userphoto').attr('src', `${tweet.user.avatars.small}`);
+  let $username = $('<h2>').addClass('username').text(`${tweet.user.name}`);
+  let $userhandle = $('<h4>').addClass('userhandle').text(`${tweet.user.handle}`);
+  let $tweetcontent = $('<p>').text(`${tweet.content.text}`);
+  let $tweetfooter = $('<footer>').addClass('tweet-footer').text(`${tweet.created_at}`);
   let $flagimg = $('<img>').addClass('img').attr('src', "https://image.flaticon.com/icons/svg/148/148878.svg");
   let $retweetimg = $('<img>').addClass('img').attr('src', "https://image.flaticon.com/icons/svg/148/148752.svg");
   let $heartimg = $('<img>').addClass('img').attr('src', "https://image.flaticon.com/icons/svg/148/148836.svg");
-  let $userimgfill = $userimg.attr('src', `${tweet.user.avatars.small}`)
-  let $usernamefill = $username.text(`${tweet.user.name}`);
-  let $userhandlefill = $userhandle.text(`${tweet.user.handle}`);
-  let $tweetcontentfill = $tweetcontent.text(`${tweet.content.text}`);
-  let $tweetfooterfill = $tweetfooter.text(`${tweet.created_at}`);
-  $header.append($userimgfill, $usernamefill, $userhandlefill);
+
+  $header.append($userimg, $username, $userhandle);
   $tweetfooter.append($flagimg, $retweetimg, $heartimg);
-  $tweet.append($header, $tweetcontentfill, $tweetfooterfill);
+  $tweet.append($header, $tweetcontent, $tweetfooter);
   return $tweet;
 }
 
