@@ -9,7 +9,7 @@ const data = [{
     "user": {
       "name": "Newton",
       "avatars": {
-        "small": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
+        "small": "https://image.flaticon.com/icons/svg/826/826599.svg",
         "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
         "large": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
       },
@@ -24,7 +24,7 @@ const data = [{
     "user": {
       "name": "Descartes",
       "avatars": {
-        "small": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
+        "small": "https://image.flaticon.com/icons/svg/826/826610.svg",
         "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
         "large": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
       },
@@ -39,7 +39,7 @@ const data = [{
     "user": {
       "name": "Johann von Goethe",
       "avatars": {
-        "small": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
+        "small": "https://image.flaticon.com/icons/svg/826/826608.svg",
         "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
         "large": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
       },
@@ -55,26 +55,31 @@ const data = [{
 function renderTweets(tweets) {
   for(users in tweets) {
       let tweet = tweets[users];
-      createTweetElement(tweet)
+      let newTweet = createTweetElement(tweet);
+      $('#tweets-container').append(newTweet);
   }
-   $('#tweets-container').append(tweet);
 }
 
 
 function createTweetElement(tweet) {
   let $tweet = $('<article>').addClass('tweet');
   let $header = $('<header>').addClass('tweet-header');
-  let $userimg = $('<img>').addClass('userphoto').prepend("${tweet.user.avatars.small}");
+  let $userimg = $('<img>').addClass('userphoto');
   let $username = $('<h2>').addClass('username');
   let $userhandle = $('<h4>').addClass('userhandle');
   let $tweetcontent = $('<p>');
-  let $tweetfooter = $('<footer>').addClass('tweet-header');
-  let $flagimg = $('<img>').addClass('img').prepend("https://image.flaticon.com/icons/svg/148/148878.svg");
-  let $retweetimg = $('<img>').addClass('img').prepend("https://image.flaticon.com/icons/svg/148/148752.svg");
-  let $heartimg = $('<img>').addClass('img').prepend("https://image.flaticon.com/icons/svg/148/148836.svg");
-  $header.append($userimg, $username, $userhandle);
+  let $tweetfooter = $('<footer>').addClass('tweet-footer');
+  let $flagimg = $('<img>').addClass('img').attr('src', "https://image.flaticon.com/icons/svg/148/148878.svg");
+  let $retweetimg = $('<img>').addClass('img').attr('src', "https://image.flaticon.com/icons/svg/148/148752.svg");
+  let $heartimg = $('<img>').addClass('img').attr('src', "https://image.flaticon.com/icons/svg/148/148836.svg");
+  let $userimgfill = $userimg.attr('src', `${tweet.user.avatars.small}`)
+  let $usernamefill = $username.text(`${tweet.user.name}`);
+  let $userhandlefill = $userhandle.text(`${tweet.user.handle}`);
+  let $tweetcontentfill = $tweetcontent.text(`${tweet.content.text}`);
+  let $tweetfooterfill = $tweetfooter.text(`${tweet.created_at}`);
+  $header.append($userimgfill, $usernamefill, $userhandlefill);
   $tweetfooter.append($flagimg, $retweetimg, $heartimg);
-  $tweet.append($header, $tweetcontent, $tweetfooter);
+  $tweet.append($header, $tweetcontentfill, $tweetfooterfill);
   return $tweet;
 }
 
