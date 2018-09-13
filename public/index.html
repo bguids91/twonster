@@ -30,11 +30,12 @@
     <nav id="nav-bar">
       <img class="logo" src="https://image.flaticon.com/icons/svg/826/826588.svg">
       <span class="header">tweeter</span>
+      <input id="compose-tweet" class="button" type="submit" value="compose">
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
+      <section id="new-tweet" class="new-tweet">
         <h2>Compose tweet</h2>
         <form id="new-tweet-form" action="/tweets" method="POST">
           <textarea id="tweet-text" class="textarea" type="text" name="text" placeholder="What are you humming about?"></textarea>

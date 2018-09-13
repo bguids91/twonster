@@ -33,4 +33,23 @@ line-height: 80px;
 padding-left: 10px;
 }
 
+#nav-bar input{
+  float: right;
+  padding: 10px;
+  line-height: 30px;
+  margin-top: 15px;
+  background-color:#00a087;
+  color: white;
+  font-family: 'Roboto Condensed';
+}
+
+#nav-bar input:hover {
+  float: right;
+  padding: 10px;
+  line-height: 30px;
+  margin-top: 15px;
+  background-color: #996633;
+  color: white;
+  font-family: 'Roboto Condensed';
+}
 

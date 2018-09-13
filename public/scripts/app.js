@@ -34,23 +34,6 @@ $('form#new-tweet-form').on('submit', function (e) {
   }
 });
 
-// function callTweetsFromMongoDb() {
-
-//   $.ajax({
-//     url: '/tweets',
-//     method: 'GET',
-//     success: function (result) {
-//       console.log("we are in success");
-//       renderTweets(result);
-//     },
-//     error: function (err) {
-//       console.log("we are in error");
-//     }
-//   });
-// }
-
-// callTweetsFromMongoDb();
-
 
 function renderTweets(tweets) {
   for(let users in tweets) {
@@ -78,6 +61,27 @@ function createTweetElement(tweet) {
   return $tweet;
 }
 
+$('#new-tweet').hide();
+$('#compose-tweet').on('click', function() {
+  $('#new-tweet').toggle();
+  $('#tweet-text').focus();
 });
 
+});
 
+// function callTweetsFromMongoDb() {
+
+//   $.ajax({
+//     url: '/tweets',
+//     method: 'GET',
+//     success: function (result) {
+//       console.log("we are in success");
+//       renderTweets(result);
+//     },
+//     error: function (err) {
+//       console.log("we are in error");
+//     }
+//   });
+// }
+
+// callTweetsFromMongoDb();
