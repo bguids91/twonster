@@ -57,7 +57,7 @@ $.ajax('/tweets').done(renderTweets);
 $('form#new-tweet-form').on('submit', function (e) {
   e.preventDefault();
 
-  let formData = $('#new-tweet-form').serialize();
+  let formData = $('#tweet-text').serialize();
   console.log(formData);
 
   $.ajax({
@@ -73,16 +73,12 @@ $('form#new-tweet-form').on('submit', function (e) {
   }).then(function () {
     $('#tweet-text').val('');
     $('#char-counter').text(140);
-    return $.ajax('/');
+    $('#tweets-container').empty();
+    return $.ajax('/tweets');
   }).then(renderTweets);
-
 });
 
 
-
-//     return $.ajax('/')
-//   }).then(renderTweets)
-//
 
 
 function renderTweets(tweets) {
