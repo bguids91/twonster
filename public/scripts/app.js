@@ -52,9 +52,41 @@ const data = [{
   }
 ];
 
+$.ajax('/tweets').done(renderTweets);
+
+$('form#new-tweet-form').on('submit', function (e) {
+  e.preventDefault();
+
+  let formData = $('#new-tweet-form').serialize();
+  console.log(formData);
+
+  $.ajax({
+    method:'POST',
+    url: '/tweets',
+    data: formData,
+    success: function(result){
+      console.log("The AJAX POST was successful");
+    },
+    error: function(err){
+      console.log("There was an error in posting",err);
+    }
+  }).then(function () {
+    $('#tweet-text').val('');
+    $('#char-counter').text(140);
+    return $.ajax('/');
+  }).then(renderTweets);
+
+});
+
+
+
+//     return $.ajax('/')
+//   }).then(renderTweets)
+//
+
 
 function renderTweets(tweets) {
-  for(users in tweets) {
+  for(let users in tweets) {
       let tweet = tweets[users];
       let newTweet = createTweetElement(tweet);
       $('#tweets-container').append(newTweet);
@@ -64,7 +96,7 @@ function renderTweets(tweets) {
 function createTweetElement(tweet) {
   let $tweet = $('<article>').addClass('tweet');
   let $header = $('<header>').addClass('tweet-header');
-  let $userimg = $('<img>').addClass('userphoto').attr('src', `${tweet.user.avatars.small}`);
+  let $userimg = $('<img>').addClass('userphoto').attr('src', tweet.user.avatars.small);
   let $username = $('<h2>').addClass('username').text(`${tweet.user.name}`);
   let $userhandle = $('<h4>').addClass('userhandle').text(`${tweet.user.handle}`);
   let $tweetcontent = $('<p>').text(`${tweet.content.text}`);
@@ -79,7 +111,7 @@ function createTweetElement(tweet) {
   return $tweet;
 }
 
-console.log(renderTweets(data));
+renderTweets(data);
 
 });
 
