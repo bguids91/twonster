@@ -56,7 +56,7 @@ function renderTweets(tweets) {
   for(let users in tweets) {
       let tweet = tweets[users];
       let newTweet = createTweetElement(tweet);
-      $('#tweets-container').append(newTweet);
+      $('#tweets-container').prepend(newTweet);
   }
 }
 
