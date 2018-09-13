@@ -30,7 +30,8 @@
     <nav id="nav-bar">
       <img class="logo" src="https://image.flaticon.com/icons/svg/826/826588.svg">
       <span class="header">tweeter</span>
-      <input id="compose-tweet" class="button" type="submit" value="compose">
+      <input id="compose-tweet" class="icon" type="submit" value="compose">
+      <img class="logo2" src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/pencil-512.png">
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -40,6 +41,8 @@
         <form id="new-tweet-form" action="/tweets" method="POST">
           <textarea id="tweet-text" class="textarea" type="text" name="text" placeholder="What are you humming about?"></textarea>
           <input id="submit-buttom" class="button" type="submit" value="tweet">
+          <span id="error-mes-1" class="error" type="text">Error:Please enter valid tweet!</span>
+          <span id="error-mes-2" class="error" type="text">Error:Character number exceeded!</span>
           <span id="char-counter" class="counter">140</span>
         </form>
       </section>

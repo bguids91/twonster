@@ -7,13 +7,23 @@ $(function () {
 
 $.ajax('/tweets').done(renderTweets);
 
+$('#error-mes-1').hide();
+$('#error-mes-2').hide();
+
 $('form#new-tweet-form').on('submit', function (e) {
   e.preventDefault();
   let formData = $('#tweet-text').serialize();
   let text = $('#tweet-text').val();
 
-  if(text === "" || text === null || text.length > 140) {
-    return alert("Please enter a valid twwet!")
+  if(text === "" || text === null) {
+    $('#error-mes-2').hide();
+    $('#error-mes-1').show('fast');
+    return console.error();
+  }
+  if(text.length > 140) {
+    $('#error-mes-1').hide();
+    $('#error-mes-2').show('fast');
+    return console.error();
   } else {
     $.ajax({
       method:'POST',
@@ -29,6 +39,8 @@ $('form#new-tweet-form').on('submit', function (e) {
       $('#tweet-text').val('');
       $('#char-counter').text(140);
       $('#tweets-container').empty();
+      $('#error-mes-1').hide();
+      $('#error-mes-2').hide();
       return $.ajax('/tweets');
     }).then(renderTweets);
   }
@@ -66,6 +78,14 @@ $('#compose-tweet').on('click', function() {
   $('#new-tweet').toggle();
   $('#tweet-text').focus();
 });
+
+// $('#error-mes').hide()
+// $('#submit-button').on('submit', function() {
+//   let text = $('#tweet-text').val();
+//   if(text === "") {
+//     ('#error-mes').show();
+//   }
+// });
 
 });
 

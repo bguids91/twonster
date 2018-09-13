@@ -33,6 +33,13 @@ line-height: 80px;
 padding-left: 10px;
 }
 
+#nav-bar .logo2{
+  float: right;
+  padding: 15px;
+  height: 80px;
+  width: 80px;
+}
+
 #nav-bar input{
   float: right;
   padding: 10px;
@@ -52,4 +59,3 @@ padding-left: 10px;
   color: white;
   font-family: 'Roboto Condensed';
 }
-
