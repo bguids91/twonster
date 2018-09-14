@@ -1,7 +1,7 @@
 # Twonster
 
 <p align="center">
-  <img src="https://image.flaticon.com/icons/svg/826/826588.svg" width="350" title="hover text">
+  <img src="https://image.flaticon.com/icons/svg/826/826588.svg" width="200" title="hover text">
 </p>
 
 Twonster is a simple, single-page Twitter clone.
