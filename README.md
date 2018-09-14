@@ -1,6 +1,6 @@
 # Twonster
 
-https://image.flaticon.com/icons/svg/826/826588.svg
+![text](https://image.flaticon.com/icons/svg/826/826588.svg)
 
 Twonster is a simple, single-page Twitter clone.
 
