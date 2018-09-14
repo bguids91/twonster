@@ -20,12 +20,12 @@ html {
 }
 
 .tweet-container header {
- border: 2px solid lightgray;
- border-top-right-radius: 5px;
- border-top-left-radius: 5px;
- background-color: lightgray;
- padding: 10px;
- height: 80px;
+  border: 2px solid lightgray;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: lightgray;
+  padding: 10px;
+  height: 80px;
 }
 
 .tweet-container .tweet-header img {

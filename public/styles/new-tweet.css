@@ -2,6 +2,10 @@ html {
   box-sizing: border-box;
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 .new-tweet {
   border: 2px solid lightgray;
   border-radius: 5px;
@@ -10,9 +14,9 @@ html {
 }
 
 .new-tweet h2 {
-color: gray;
-margin-top: 0;
-border-bottom: 2px solid gray;
+  color: gray;
+  margin-top: 0;
+  border-bottom: 2px solid gray;
 }
 
 .new-tweet textarea {
@@ -24,7 +28,7 @@ border-bottom: 2px solid gray;
 }
 
 .new-tweet .counter {
-float: right;
+  float: right;
 }
 
 .new-tweet .error {

@@ -3,6 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
   box-sizing: border-box;
 }
@@ -10,10 +11,6 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
-/*
- * Global layout stuff
- */
 
 body {
   font-family: 'Roboto Condensed',
@@ -30,8 +27,3 @@ body {
   padding: 2em;
   background-color: white;
 }
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
