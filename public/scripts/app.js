@@ -1,8 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 
 $(function () {
 
@@ -63,7 +58,7 @@ function createTweetElement(tweet) {
   let $username = $('<h2>').addClass('username').text(`${tweet.user.name}`);
   let $userhandle = $('<h4>').addClass('userhandle').text(`${tweet.user.handle}`);
   let $tweetcontent = $('<p>').text(`${tweet.content.text}`);
-  let $tweetfooter = $('<footer>').addClass('tweet-footer').text(`${tweet.created_at}`);
+  let $tweetfooter = $('<footer>').addClass('tweet-footer').text(`Created at ${tweet.created_at}`);
   let $flagimg = $('<img>').addClass('img').attr('src', "https://image.flaticon.com/icons/svg/148/148878.svg");
   let $retweetimg = $('<img>').addClass('img').attr('src', "https://image.flaticon.com/icons/svg/148/148752.svg");
   let $heartimg = $('<img>').addClass('img').attr('src', "https://image.flaticon.com/icons/svg/148/148836.svg");
@@ -78,24 +73,7 @@ $('#new-tweet').hide();
 $('#compose-tweet').on('click', function() {
   $('#new-tweet').toggle();
   $('#tweet-text').focus();
-});
-
 
 });
 
-// function callTweetsFromMongoDb() {
-
-//   $.ajax({
-//     url: '/tweets',
-//     method: 'GET',
-//     success: function (result) {
-//       console.log("we are in success");
-//       renderTweets(result);
-//     },
-//     error: function (err) {
-//       console.log("we are in error");
-//     }
-//   });
-// }
-
-// callTweetsFromMongoDb();
+});

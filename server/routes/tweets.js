@@ -10,7 +10,6 @@ module.exports = function(DataHelpers) {
   tweetsRoutes.get("/", function(req, res) {
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
-        console.log("oh god");
         res.status(500).json({ error: err.message });
       } else {
         res.json(tweets);
@@ -30,7 +29,7 @@ module.exports = function(DataHelpers) {
       content: {
         text: req.body.text
       },
-      created_at: Date.now()
+      created_at: new Date()
     };
 
     DataHelpers.saveTweet(tweet, (err) => {
