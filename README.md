@@ -4,7 +4,7 @@
   <img src="https://image.flaticon.com/icons/svg/826/826588.svg" width="200" title="hover text">
 </p>
 
-Twonster is a simple, single-page Twitter clone that is aimed at a younger demographic.
+Twonster is a simple, single-page Twitter clone that is aimed at a younger demographic. It can be used to teach and demonstrate how social media and technology works. Twonster allows a user to compose a tweet, post it and then have it show up directly into their feed. 
 
 ## Getting Started
 
@@ -24,4 +24,7 @@ Twonster is a simple, single-page Twitter clone that is aimed at a younger demog
 - Mongodb
 
 ## Screenshots
+
+!["Home screen"](https://github.com/bguids91/tweeter/blob/master/docs/Screen%20Shot%202018-09-14%20at%2010.33.04.png?raw=true)
+
 
