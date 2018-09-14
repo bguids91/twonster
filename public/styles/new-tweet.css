@@ -33,3 +33,9 @@ float: right;
   color: white;
   padding: 2px;
 }
+
+.new-tweet .monster {
+  height: 69px;
+  width: 69px;
+  padding: 10px;
+}

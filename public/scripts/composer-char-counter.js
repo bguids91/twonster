@@ -14,8 +14,5 @@ textarea.on('input', function() {
     counter.css('color', 'black')
   }
 });
-
 textarea.on
-
-
 });

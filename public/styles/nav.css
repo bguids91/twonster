@@ -17,6 +17,7 @@ html {
   bottom: 0px;
   padding-left: 2em;
   padding-right: 2em;
+  z-index: 1;
 }
 
 #nav-bar .logo {

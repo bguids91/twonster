@@ -80,13 +80,6 @@ $('#compose-tweet').on('click', function() {
   $('#tweet-text').focus();
 });
 
-// $('#error-mes').hide()
-// $('#submit-button').on('submit', function() {
-//   let text = $('#tweet-text').val();
-//   if(text === "") {
-//     ('#error-mes').show();
-//   }
-// });
 
 });
 

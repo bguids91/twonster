@@ -70,3 +70,10 @@ html {
   float: right;
   opacity: 0;
 }
+
+.tweet-container .monster {
+  position: center;
+  float: center;
+  height: 10px;
+  width: 10px;
+}
