@@ -55,7 +55,7 @@ $(function () {
     let $userimg = $('<img>').addClass('userphoto').attr('src', tweet.user.avatars.small);
     let $username = $('<h2>').addClass('username').text(`${tweet.user.name}`);
     let $userhandle = $('<h4>').addClass('userhandle').text(`${tweet.user.handle}`);
-    let $tweetcontent = $('<p>').text(`${tweet.content.text}`);
+    let $tweetcontent = $('<p>').text(`${tweet.content.text}`)
     let $tweetfooter = $('<footer>').addClass('tweet-footer').text(`Created at ${tweet.created_at}`);
     let $flagimg = $('<img>').addClass('img').attr('src', "https://image.flaticon.com/icons/svg/148/148878.svg");
     let $retweetimg = $('<img>').addClass('img').attr('src', "https://image.flaticon.com/icons/svg/148/148752.svg");
@@ -70,8 +70,7 @@ $(function () {
   $('#new-tweet').hide();
   $('#compose-tweet').on('click', function() {
     $('#new-tweet').toggle();
-    $('#tweet-text').focus();
-
+    $('#tweet-text').focus()
   });
 
 });

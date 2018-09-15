@@ -3,8 +3,6 @@
 const Chance = require("chance");
 const chance = new Chance();
 
-const md5 = require('md5');
-
 module.exports = {
 
   generateRandomUser: () => {
@@ -27,11 +25,16 @@ module.exports = {
       userHandle += suffix;
     }
 
-    const avatarUrlPrefix = `https://vanillicon.com/${md5(userHandle)}`;
+    let textArray = [434986, 434999, 434996, 434998, 434992, 434985, 434988, 434981, 434980, 434977, 434991, 434995, 434970, 434984, 434982, 434969, 434975, 434978, 434972, 434973, 434976]
+
+    var randomIndex = Math.floor(Math.random() * textArray.length);
+    var randomElement = textArray[randomIndex];
+
+    const avatarUrlPrefix = `https://image.flaticon.com/icons/svg/434/${randomElement}.svg`;
     const avatars = {
-      small:   `${avatarUrlPrefix}_50.png`,
-      regular: `${avatarUrlPrefix}.png`,
-      large:   `${avatarUrlPrefix}_200.png`
+      small:   `${avatarUrlPrefix}`,
+      regular: `${avatarUrlPrefix}`,
+      large:   `${avatarUrlPrefix}`
     }
 
     return {
