@@ -56,6 +56,12 @@ body nav input:hover {
   color: white;
   font-family: "Roboto Condensed";
 }
+body nav input button .icon {
+  background-image: url("https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/pencil-512.png");
+  float: left;
+  width: 50px;
+  height: 40px;
+}
 body nav img.logo2 {
   float: right;
   padding: 15px;
