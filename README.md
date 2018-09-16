@@ -25,7 +25,7 @@ Twonster is a simple, single-page Twitter clone that is aimed at a younger demog
 
 ## Screenshots
 
-!["Home screen"](https://github.com/bguids91/tweeter/blob/master/docs/Screen%20Shot%202018-09-14%20at%2010.33.04.png?raw=true)
+!["Home screen"](https://github.com/bguids91/tweeter/blob/master/docs/Screen%20Shot%202018-09-15%20at%2017.51.37.png?raw=true)
 
 ## Collaborators
 https://github.com/alefiyaV
